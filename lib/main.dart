@@ -14,10 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      // MODIFY with const
+    return MaterialApp(
+      // Remove the const from here
       title: 'Startup Name Generator',
-      home: RandomWords(), // REMOVE Scaffold
+      theme: ThemeData(
+        // Add the 5 lines from here...
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
+      ), // ... to here.
+      home: const RandomWords(), // And add the const back here.
     );
   }
 }
